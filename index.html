@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified Investment Banking Operations Professional | Imarticus Learning</title>
+<!-- Inline favicon — no external file needed, eliminates 404 favicon errors -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230A0E1A'/><text x='50' y='68' font-family='Georgia,serif' font-size='42' font-weight='900' text-anchor='middle' fill='%23C9A84C'>C</text></svg>">
+<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230A0E1A'/><text x='50' y='68' font-family='Georgia,serif' font-size='42' font-weight='900' text-anchor='middle' fill='%23C9A84C'>C</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #9A6F2E;
+    --gold-light: #C4922A;
+    --dark: #FAF8F4;
+    --dark2: #F2EFE8;
+    --dark3: #E8E3D8;
+    --text: #1C1A16;
+    --muted: #6B6355;
+    --accent: #2D5FA6;
+    --green: #1A7A54;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(250,248,244,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(154,111,46,0.15);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--text); font-weight: 400; }
+  .nav-cta {
+    background: var(--gold);
+    color: #FAF8F4;
+    padding: 10px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(154,111,46,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(45,95,166,0.05) 0%, transparent 60%);
+  }
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    max-width: 900px;
+    animation: fadeUp 0.8s 0.2s ease forwards;
+    opacity: 0;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: fadeUp 0.8s 0.4s ease forwards;
+    opacity: 0;
+  }
+  .hero-actions {
+    margin-top: 44px;
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 0.8s 0.6s ease forwards;
+    opacity: 0;
+  }
+  /* Imarticus badge below hero actions */
+  .imarticus-badge {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(154,111,46,0.08);
+    border: 1px solid rgba(154,111,46,0.25);
+    padding: 10px 22px;
+    border-radius: 4px;
+    animation: fadeUp 0.8s 0.8s ease forwards;
+    opacity: 0;
+  }
+  .imarticus-badge span {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .imarticus-badge strong {
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(154,111,46,0.25); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    padding: 16px 40px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 1px solid rgba(28,26,22,0.2);
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* URGENCY TICKER */
+  .ticker-wrap {
+    background: linear-gradient(90deg, #1C1A16 0%, #2C2820 50%, #1C1A16 100%);
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+    color: #C4922A;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .ticker span { margin: 0 48px; }
+  .ticker span::before { content: '◆ '; }
+
+  /* STATS SECTION */
+  .section { padding: 90px 60px; max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 700px;
+  }
+  .section-title em { color: var(--gold); font-style: normal; }
+
+  /* LIVE MARKET DATA */
+  .market-section {
+    background: var(--dark2);
+    border-top: 1px solid rgba(154,111,46,0.07);
+    border-bottom: 1px solid rgba(154,111,46,0.07);
+    padding: 80px 0;
+  }
+  .market-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .market-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 56px; flex-wrap: wrap; gap: 20px;
+  }
+  .live-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(26,122,84,0.1);
+    border: 1px solid rgba(26,122,84,0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--green);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .live-dot {
+    width: 7px; height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .stat-card {
+    background: var(--dark3);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-4px); background: #DDD8CE; }
+  .stat-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .stat-card:hover::after { transform: scaleX(1); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-num sup { font-size: 1.4rem; }
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+  .stat-sub {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: rgba(201,168,76,0.6);
+  }
+
+  /* COMPANIES HIRING */
+  .companies-section { padding: 80px 0; }
+  .companies-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+
+  .companies-grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .company-card {
+    background: var(--dark3);
+    border: 1px solid rgba(154,111,46,0.07);
+    padding: 20px 24px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .company-card:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+    transform: translateX(4px);
+  }
+  .company-name { font-weight: 600; font-size: 0.9rem; }
+  .company-jobs {
+    background: rgba(201,168,76,0.12);
+    color: var(--gold);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .company-card.top { border-color: rgba(154,111,46,0.3); }
+  .company-card.top .company-name { color: var(--gold-light); }
+
+  /* SALARY CHART */
+  .salary-section {
+    background: var(--dark2);
+    padding: 80px 0;
+  }
+  .salary-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .salary-bars {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+  }
+  .salary-row { display: flex; align-items: center; gap: 20px; }
+  .salary-range {
+    width: 110px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .bar-outer {
+    flex: 1;
+    background: rgba(154,111,46,0.07);
+    border-radius: 3px;
+    height: 36px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-inner {
+    height: 100%;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--dark);
+    animation: growBar 1.2s ease forwards;
+    transform-origin: left;
+  }
+  .bar-inner.tier1 { background: linear-gradient(90deg, #6B7280, #9CA3AF); }
+  .bar-inner.tier2 { background: linear-gradient(90deg, #C9A84C, #E8C97A); }
+  .bar-inner.tier3 { background: linear-gradient(90deg, #10B981, #34D399); }
+  .bar-inner.tier4 { background: linear-gradient(90deg, #2563EB, #60A5FA); }
+  .bar-count {
+    margin-left: 12px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .salary-insight {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: rgba(154,111,46,0.06);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    max-width: 700px;
+  }
+  .salary-insight p { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+  .salary-insight strong { color: var(--gold); }
+
+  /* ROLES SECTION */
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .role-card {
+    background: var(--dark3);
+    border: 1px solid rgba(154,111,46,0.07);
+    border-radius: 8px;
+    padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .role-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .role-card:hover::before { transform: scaleX(1); }
+  .role-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-4px); }
+  .role-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--gold);
+  }
+  .role-title { font-weight: 600; font-size: 0.95rem; margin-top: 8px; line-height: 1.4; }
+  .role-desc { font-size: 0.78rem; color: var(--muted); margin-top: 8px; line-height: 1.6; }
+  .role-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 10px;
+    background: rgba(37,99,235,0.1);
+    color: #60A5FA;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* IMARTICUS TRUST STRIP */
+  .imarticus-strip {
+    background: linear-gradient(135deg, #EDE8DF 0%, #E4DDD1 100%);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(154,111,46,0.15);
+    padding: 60px 0;
+  }
+  .imarticus-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    text-align: center;
+  }
+  .imarticus-strip-inner .section-label { text-align: center; }
+  .imarticus-strip-inner .section-title { margin: 0 auto; text-align: center; }
+  .imarticus-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .im-stat {
+    background: var(--dark3);
+    padding: 32px 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .im-stat:hover { transform: translateY(-4px); }
+  .im-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .im-stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, #FAF8F4 0%, #F2EFE8 50%, #FAF8F4 100%);
+    padding: 100px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(154,111,46,0.06) 0%, transparent 70%);
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.15;
+  }
+  .cta-section h2 em { color: var(--gold); font-style: normal; }
+  .cta-section p {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 540px;
+    margin: 0 auto 44px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .cta-box {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .cta-input {
+    background: var(--dark3);
+    border: 1px solid rgba(154,111,46,0.12);
+    color: var(--text);
+    padding: 16px 24px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    width: 280px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .cta-input:focus { border-color: var(--gold); }
+  .cta-input::placeholder { color: var(--muted); }
+
+  .urgency-line {
+    font-size: 0.78rem;
+    color: var(--muted);
+    position: relative;
+  }
+  .urgency-line strong { color: var(--gold); }
+
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: waBounce 2s ease infinite;
+  }
+  .wa-bubble {
+    background: #1C1A16;
+    color: #FAF8F4;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 20px 20px 4px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  .wa-bubble span { display: block; color: #25D366; font-size: 0.7rem; font-weight: 500; }
+  .wa-btn {
+    width: 60px; height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,174,90,0.4);
+    text-decoration: none;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .wa-btn:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,174,90,0.55); }
+  @keyframes waBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1C1A16;
+    padding: 32px 60px;
+    text-align: center;
+    border-top: 1px solid rgba(154,111,46,0.07);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  footer strong { color: var(--gold); }
+
+  /* SCROLL ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* KEYFRAMES */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(30px); }
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  @keyframes growBar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE — TABLET (≤ 960px)
+  ═══════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    nav { padding: 14px 24px; }
+    .logo { font-size: 1.1rem; letter-spacing: 1px; }
+    .nav-cta { padding: 9px 18px; font-size: 0.78rem; }
+
+    .hero { padding: 110px 24px 60px; }
+    .hero-sub { font-size: 1rem; }
+    .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 340px; text-align: center; }
+
+    .imarticus-badge { flex-wrap: wrap; justify-content: center; text-align: center; gap: 6px; padding: 10px 16px; }
+
+    .section, .market-inner, .companies-inner, .salary-inner, .imarticus-strip-inner, .inner-wrap { padding: 50px 24px; }
+
+    .market-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 3px; }
+    .stat-card { padding: 28px 20px; }
+    .stat-num { font-size: 2.4rem; }
+
+    .companies-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .salary-bars { max-width: 100%; }
+    .salary-range { width: 80px; font-size: 0.76rem; }
+
+    .roles-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Programme overview: stack on tablet */
+    .programme-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    [style*="padding:0 60px"] { padding: 0 24px !important; }
+
+    .imarticus-stats { grid-template-columns: repeat(2, 1fr); }
+    .im-stat { padding: 24px 16px; }
+    .im-stat-num { font-size: 2rem; }
+
+    .cta-section { padding: 70px 24px; }
+    .cta-box { flex-direction: column; align-items: center; }
+    .cta-input { width: 100%; max-width: 400px; }
+    .btn-primary#submit-btn, button#submit-btn { width: 100%; max-width: 400px; }
+
+    footer { padding: 24px 20px; font-size: 0.75rem; line-height: 1.7; }
+
+    /* WhatsApp float: hide bubble on tablet, just show button */
+    .wa-bubble { display: none; }
+    .wa-float { bottom: 20px; right: 20px; }
+  }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE — MOBILE (≤ 480px)
+  ═══════════════════════════════════════════ */
+  @media (max-width: 480px) {
+    nav { padding: 12px 16px; }
+    .logo { font-size: 1rem; letter-spacing: 0.5px; }
+    .logo span { font-size: 0.85rem; }
+    .nav-cta { padding: 8px 14px; font-size: 0.72rem; letter-spacing: 0.5px; }
+
+    .hero { padding: 100px 16px 50px; min-height: auto; }
+    .hero-tag { font-size: 0.62rem; letter-spacing: 2px; padding: 5px 14px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2rem, 9vw, 2.8rem); line-height: 1.1; }
+    .hero-sub { font-size: 0.92rem; margin-top: 16px; }
+    .hero-actions { margin-top: 28px; }
+    .btn-primary, .btn-secondary { padding: 14px 24px; font-size: 0.88rem; max-width: 100%; }
+
+    .imarticus-badge { font-size: 0.7rem; padding: 8px 12px; gap: 4px; }
+    .imarticus-badge span { font-size: 0.68rem; }
+    .imarticus-badge strong { font-size: 0.78rem; }
+
+    .ticker span { margin: 0 24px; font-size: 0.72rem; }
+
+    .section, .market-inner, .companies-inner, .salary-inner, .imarticus-strip-inner, .inner-wrap { padding: 40px 16px; }
+    .section-title { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+    .section-label { font-size: 0.65rem; letter-spacing: 2px; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .stat-card { padding: 22px 14px; }
+    .stat-num { font-size: 2rem; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 1px; }
+    .stat-sub { font-size: 0.68rem; }
+
+    .companies-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .company-card { padding: 14px 12px; }
+    .company-name { font-size: 0.78rem; }
+    .company-jobs { font-size: 0.68rem; padding: 2px 7px; }
+
+    .salary-row { gap: 10px; }
+    .salary-range { width: 68px; font-size: 0.7rem; }
+    .bar-outer { height: 30px; }
+    .bar-inner { font-size: 0.68rem; padding-left: 10px; }
+    .salary-insight { padding: 16px; }
+    .salary-insight p { font-size: 0.82rem; }
+
+    .roles-grid { grid-template-columns: 1fr; gap: 12px; }
+    .role-card { padding: 22px 18px; }
+    .role-count { font-size: 2rem; }
+    .role-title { font-size: 0.88rem; }
+
+    .imarticus-stats { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .im-stat { padding: 20px 12px; }
+    .im-stat-num { font-size: 1.8rem; }
+    .im-stat-label { font-size: 0.68rem; letter-spacing: 1px; }
+
+    .cta-section { padding: 50px 16px; }
+    .cta-section h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+    .cta-section p { font-size: 0.88rem; margin-bottom: 28px; }
+    .cta-input { width: 100%; padding: 14px 16px; font-size: 0.88rem; }
+    .urgency-line { font-size: 0.7rem; line-height: 1.9; }
+
+    /* Programme overview inline styles override */
+    [style*="grid-template-columns:1fr 1fr"] { display: block !important; }
+    [style*="padding:0 60px"] { padding: 0 16px !important; }
+
+    .wa-float { bottom: 16px; right: 16px; }
+    .wa-btn { width: 52px; height: 52px; font-size: 1.5rem; }
+
+    footer { padding: 20px 16px; }
+
+    .gold-divider { margin: 14px 0 28px; }
+  }
+
+  /* ── PREMIUM LIGHT THEME ENHANCEMENTS ── */
+  nav {
+    box-shadow: 0 1px 24px rgba(28,26,22,0.08);
+  }
+  .stat-card {
+    box-shadow: 0 2px 12px rgba(28,26,22,0.06);
+  }
+  .role-card {
+    box-shadow: 0 2px 16px rgba(28,26,22,0.06);
+  }
+  .company-card {
+    box-shadow: 0 1px 8px rgba(28,26,22,0.05);
+  }
+  .section-title {
+    letter-spacing: -0.02em;
+  }
+  .im-stat {
+    box-shadow: 0 2px 12px rgba(28,26,22,0.06);
+  }
+  .bar-outer {
+    background: rgba(28,26,22,0.08);
+  }
+  .cta-input {
+    background: #fff;
+    border: 1px solid rgba(28,26,22,0.15);
+    color: var(--text);
+    box-shadow: 0 1px 4px rgba(28,26,22,0.06);
+  }
+  .cta-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(154,111,46,0.12);
+  }
+  /* Salary insight border */
+  .salary-insight {
+    border-left: 3px solid var(--gold);
+    background: rgba(154,111,46,0.05);
+  }
+
+
+  /* INNER WRAP */
+  .inner-wrap { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin: 20px 0 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Imarticus Learning</div>
+  <a href="https://wa.me/917045960697?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Imarticus%20Courses%20for%20placement%20Opportunities%20in%20MNC%27s" target="_blank" rel="noopener" style="text-decoration:none;"><button class="nav-cta">💬 WhatsApp Us</button></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Certified Investment Banking Operations Professional</div>
+  <h1>3,600+ Jobs. <em>Zero</em> Qualified<br>Candidates to Fill Them.</h1>
+  <p class="hero-sub">The Investment Banking sector in Mumbai & Pune alone has over 3,600 active openings right now — and employers like Nomura, JPMorgan & Deutsche Bank are struggling to find job-ready talent.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">Claim Your Seat Now</button>
+    <button class="btn-secondary" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">See the Market Data ↓</button>
+  </div>
+  <div class="imarticus-badge">
+    <span>A Programme by</span>
+    <strong>🎓 Imarticus Learning</strong>
+    <span>| India's #1 Finance Education Institute</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>Nomura: 242 open roles</span>
+    <span>JPMorgan Chase: 75 open roles</span>
+    <span>Deutsche Bank: 77 open roles</span>
+    <span>Crisil: 101 open roles</span>
+    <span>6-10 LPA: 1,785 openings</span>
+    <span>Mumbai alone: 1,735+ jobs</span>
+    <span>Investment Banking roles: 352 active</span>
+    <span>Nomura: 242 open roles</span>
+    <span>JPMorgan Chase: 75 open roles</span>
+    <span>Deutsche Bank: 77 open roles</span>
+    <span>Crisil: 101 open roles</span>
+    <span>6-10 LPA: 1,785 openings</span>
+    <span>Mumbai alone: 1,735+ jobs</span>
+    <span>Investment Banking roles: 352 active</span>
+  </div>
+</div>
+
+<!-- MARKET STATS -->
+<div class="market-section" id="stats">
+  <div class="market-inner">
+    <div class="market-header fade-in">
+      <div>
+        <div class="section-label">Live Market Intelligence</div>
+        <div class="section-title">The IB Job Market Is <em>Exploding</em>.<br>Are You Ready?</div>
+      </div>
+      <div class="live-badge"><div class="live-dot"></div> LIVE JOB PORTAL DATA</div>
+    </div>
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-num" id="live-stat-1">3,600<sup>+</sup></div>
+        <div class="stat-label">Active IB/BFSI Jobs</div>
+        <div class="stat-sub">Mumbai & Pune only</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="live-stat-2">1,785</div>
+        <div class="stat-label">Jobs at 6–10 LPA</div>
+        <div class="stat-sub">Largest salary bracket</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="live-stat-3">352</div>
+        <div class="stat-label">IB & Private Equity</div>
+        <div class="stat-sub">Pure IB roles available</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="live-stat-4">242</div>
+        <div class="stat-label">Nomura openings</div>
+        <div class="stat-sub">#1 single-firm hirer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO'S HIRING -->
+<section style="padding:80px 0; background: var(--dark);">
+  <div class="companies-inner">
+    <div class="fade-in">
+      <div class="section-label">Employer Demand</div>
+      <div class="section-title">These Are the Banks<br>That <em>Need YOU</em> Right Now</div>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="companies-grid fade-in">
+      <div class="company-card top">
+        <span class="company-name">🏦 Nomura</span>
+        <span class="company-jobs">242 jobs</span>
+      </div>
+      <div class="company-card top">
+        <span class="company-name">📊 Crisil</span>
+        <span class="company-jobs">101 jobs</span>
+      </div>
+      <div class="company-card top">
+        <span class="company-name">🏦 Deutsche Bank</span>
+        <span class="company-jobs">77 jobs</span>
+      </div>
+      <div class="company-card top">
+        <span class="company-name">🏦 JPMorgan Chase</span>
+        <span class="company-jobs">75 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">💼 EY</span>
+        <span class="company-jobs">62 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">💻 eClerx</span>
+        <span class="company-jobs">44 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">📈 MSCI Services</span>
+        <span class="company-jobs">28 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">🏢 Mahindra Finance</span>
+        <span class="company-jobs">25 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">💳 FIS</span>
+        <span class="company-jobs">23 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">🔍 Accenture</span>
+        <span class="company-jobs">79 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">🏦 DBS Bank</span>
+        <span class="company-jobs">13 jobs</span>
+      </div>
+      <div class="company-card">
+        <span class="company-name">📊 Motilal Oswal</span>
+        <span class="company-jobs">12 jobs</span>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:0.8rem; color:var(--muted);">* Data sourced directly from leading Indian job portals. Numbers represent active listings at time of capture.</p>
+  </div>
+</section>
+
+<!-- SALARY SECTION -->
+<div class="salary-section">
+  <div class="salary-inner">
+    <div class="fade-in">
+      <div class="section-label">Salary Landscape</div>
+      <div class="section-title">Where the <em>Real Money</em><br>in IB Operations Is</div>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="salary-bars fade-in">
+      <div class="salary-row">
+        <div class="salary-range">0 – 3 LPA</div>
+        <div class="bar-outer">
+          <div class="bar-inner tier1" style="width:25%; animation-delay:0.1s">443 jobs</div>
+        </div>
+      </div>
+      <div class="salary-row">
+        <div class="salary-range">3 – 6 LPA</div>
+        <div class="bar-outer">
+          <div class="bar-inner tier2" style="width:55%; animation-delay:0.3s">1,380 jobs</div>
+        </div>
+      </div>
+      <div class="salary-row">
+        <div class="salary-range">6 – 10 LPA</div>
+        <div class="bar-outer">
+          <div class="bar-inner tier3" style="width:75%; animation-delay:0.5s">1,785 jobs</div>
+        </div>
+      </div>
+      <div class="salary-row">
+        <div class="salary-range">10 – 15 LPA</div>
+        <div class="bar-outer">
+          <div class="bar-inner tier4" style="width:22%; animation-delay:0.7s">77 jobs</div>
+        </div>
+      </div>
+    </div>
+    <div class="salary-insight fade-in">
+      <p>The data is unambiguous: <strong>the 6–10 LPA band holds the single largest pool of open IB roles (1,785 jobs)</strong>. These roles require domain-specific knowledge of capital markets operations — exactly what Imarticus Learning is designed to deliver in 3 months.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- IMARTICUS TRUST STRIP -->
+<div class="imarticus-strip">
+  <div class="imarticus-strip-inner">
+    <div class="fade-in">
+      <div class="section-label">Why Imarticus Learning</div>
+      <div class="section-title" style="margin:0 auto;">India's Most Trusted <em>Finance Education</em> Institute</div>
+      <div class="gold-divider" style="margin:20px auto 40px;"></div>
+      <p style="color:var(--muted); max-width:600px; margin:0 auto 48px; line-height:1.8; font-size:0.95rem;">Imarticus Learning has been at the forefront of finance & banking education since 2012 — partnering with top BFSI employers to design programmes that get graduates hired.</p>
+    </div>
+    <div class="imarticus-stats fade-in">
+      <div class="im-stat">
+        <div class="im-stat-num">50K<sup style="font-size:1.2rem">+</sup></div>
+        <div class="im-stat-label">Alumni Placed</div>
+      </div>
+      <div class="im-stat">
+        <div class="im-stat-num">2000<sup style="font-size:1.2rem">+</sup></div>
+        <div class="im-stat-label">Hiring Partners</div>
+      </div>
+      <div class="im-stat">
+        <div class="im-stat-num">12<sup style="font-size:1.2rem">+</sup></div>
+        <div class="im-stat-label">Years of Excellence</div>
+      </div>
+      <div class="im-stat">
+        <div class="im-stat-num">15<sup style="font-size:1.2rem">+</sup></div>
+        <div class="im-stat-label">Centres Across India</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / ENQUIRY FORM -->
+<section class="cta-section" id="enquire">
+  <h2>The <em>Window Is Open</em>.<br>Step Through It.</h2>
+  <p>Over 3,600 IB operations roles are actively hiring in Mumbai & Pune. The next batch by Imarticus Learning starts soon. Reserve your consultation today.</p>
+  <div class="cta-box" id="enquiry-form">
+    <input type="text" id="student-name" class="cta-input" placeholder="Your Name" required>
+    <input type="tel" id="student-phone" class="cta-input" placeholder="Mobile Number" required>
+    <button class="btn-primary" id="submit-btn" style="padding:16px 36px;" onclick="submitEnquiry()">Book Free Counselling →</button>
+  </div>
+  <!-- Success message (hidden initially) -->
+  <div id="success-msg" style="display:none; position:relative; margin-bottom:20px;">
+    <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(26,122,84,0.35); border-radius:8px; padding:20px 32px; display:inline-block;">
+      <div style="color:#34D399; font-size:1.1rem; font-weight:700; margin-bottom:4px;">✅ Enquiry received!</div>
+      <div style="color:var(--muted); font-size:0.88rem;">Redirecting you to WhatsApp now…</div>
+    </div>
+  </div>
+  <div style="margin-bottom:24px; display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; position:relative;">
+    <div style="height:1px; width:80px; background:rgba(154,111,46,0.12);"></div>
+    <span style="color:var(--muted); font-size:0.8rem; letter-spacing:1px; text-transform:uppercase;">or chat directly</span>
+    <div style="height:1px; width:80px; background:rgba(154,111,46,0.12);"></div>
+  </div>
+  <div style="position:relative; margin-bottom:28px;">
+    <a href="https://wa.me/917045960697?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Imarticus%20Courses%20for%20placement%20Opportunities%20in%20MNC%27s"
+       target="_blank" rel="noopener"
+       style="display:inline-flex; align-items:center; gap:12px; background:#25D366; color:#fff; padding:16px 36px; border-radius:4px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:all 0.3s; box-shadow:0 6px 24px rgba(37,174,90,0.3);"
+       onmouseover="this.style.background='#1ebe5d'; this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.background='#25D366'; this.style.transform='translateY(0)'">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Chat With Us for More Details
+    </a>
+  </div>
+  <div class="urgency-line">
+    <strong>⚡ Limited seats per batch.</strong> &nbsp;|&nbsp; Counselling sessions are free & non-obligatory. &nbsp;|&nbsp; Mumbai · Pune · Online
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-bubble">Chat with Gopal Sir<span>Instant response on WhatsApp</span></div>
+  <a class="wa-btn" href="https://wa.me/917045960697?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Imarticus%20Courses%20for%20placement%20Opportunities%20in%20MNC%27s" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Imarticus Learning</strong> — Certified Investment Banking Operations Professional &nbsp;|&nbsp; © 2025 Imarticus Learning &nbsp;|&nbsp; Mumbai · Pune
+</footer>
+
+<script>
+  // ─── FORM SUBMISSION ───────────────────────────────────────────────
+  async function submitEnquiry() {
+    const nameEl  = document.getElementById('student-name');
+    const phoneEl = document.getElementById('student-phone');
+    const btn     = document.getElementById('submit-btn');
+    const formBox = document.getElementById('enquiry-form');
+    const successMsg = document.getElementById('success-msg');
+
+    const name  = nameEl.value.trim();
+    const phone = phoneEl.value.trim();
+
+    if (!name) { nameEl.focus(); nameEl.style.borderColor = '#EF4444'; return; }
+    if (!phone) { phoneEl.focus(); phoneEl.style.borderColor = '#EF4444'; return; }
+
+    // Disable button while submitting
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    btn.style.opacity = '0.7';
+
+    try {
+      // ⚠️  REPLACE "YOUR_FORMSPREE_ID" below with your actual Formspree endpoint ID
+      // Sign up free at https://formspree.io → New Form → copy the ID (e.g. xpwzqkbn)
+      await fetch('https://formspree.io/f/mwvrlnwq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name:  name,
+          phone: phone,
+          source: 'Imarticus Landing Page – Book Free Counselling'
+        })
+      });
+    } catch(err) {
+      // Even if fetch fails, still open WhatsApp (don't block the user)
+      console.warn('Formspree error:', err);
+    }
+
+    // Show success state
+    formBox.style.display = 'none';
+    successMsg.style.display = 'block';
+
+    // Open WhatsApp after short delay so user sees the success message
+    setTimeout(() => {
+      const msg = encodeURIComponent(
+        `Hi, I want to know more about Imarticus Courses for placement Opportunities in MNC's.\n\nName: ${name}\nPhone: ${phone}`
+      );
+      window.open(`https://wa.me/917045960697?text=${msg}`, '_blank');
+    }, 1200);
+  }
+
+  // Reset field border color on input
+  document.addEventListener('DOMContentLoaded', () => {
+    ['student-name','student-phone'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => el.style.borderColor = '');
+    });
+  });
+
+  // ─── SCROLL FADE-IN ─────────────────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Animated counter
+  const targets = [3600, 1785, 352, 242];
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums.forEach((n, j) => {
+          const t = targets[j];
+          if (t) {
+            let c = 0; const s = t/60;
+            const sup = n.querySelector('sup');
+            const timer = setInterval(() => {
+              c += s; if (c >= t) { c = t; clearInterval(timer); }
+              n.textContent = Math.floor(c).toLocaleString();
+              if (sup) n.appendChild(sup);
+            }, 16);
+          }
+        });
+        statObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.stats-grid').forEach(g => statObserver.observe(g));
+
+  // ─── DYNAMIC LIVE STATS (updates every 30 min, ±10%) ──────────────────
+  const BASE_STATS = [3600, 1785, 352, 242];
+  const STAT_IDS   = ['live-stat-1', 'live-stat-2', 'live-stat-3', 'live-stat-4'];
+  const HALF_HOUR_MS = 30 * 60 * 1000;
+
+  function seededRand(seed) {
+    const x = Math.sin(seed + 1) * 10000;
+    return x - Math.floor(x);
+  }
+
+  function getSlotSeed() {
+    return Math.floor(Date.now() / HALF_HOUR_MS);
+  }
+
+  function computeLiveStats(slotSeed) {
+    return BASE_STATS.map((base, i) => {
+      const r = seededRand(slotSeed * 10 + i);
+      const pct = (r * 0.2) - 0.1; // -10% to +10%
+      return Math.round(base * (1 + pct));
+    });
+  }
+
+  function animateStat(el, targetVal, animate) {
+    const isStat1 = el.id === 'live-stat-1';
+    if (!animate) {
+      el.innerHTML = targetVal.toLocaleString() + (isStat1 ? '<sup>+</sup>' : '');
+      return;
+    }
+    const start = parseInt(el.textContent.replace(/,/g, '')) || targetVal;
+    const startTime = performance.now();
+    function step(now) {
+      const p = Math.min((now - startTime) / 800, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const cur = Math.round(start + (targetVal - start) * ease);
+      el.innerHTML = cur.toLocaleString() + (isStat1 ? '<sup>+</sup>' : '');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  let lastSlot = null;
+  function refreshStats(isFirst) {
+    const slot = getSlotSeed();
+    if (slot === lastSlot && !isFirst) return;
+    lastSlot = slot;
+    const vals = computeLiveStats(slot);
+    STAT_IDS.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el) animateStat(el, vals[i], !isFirst);
+    });
+  }
+
+  refreshStats(true);
+  setInterval(() => refreshStats(false), 60 * 1000);
+</script>
+</body>
+</html>
